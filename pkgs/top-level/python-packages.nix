@@ -6706,6 +6706,8 @@ in {
 
   python-language-server = callPackage ../development/python-modules/python-language-server { };
 
+  python-lsp-jsonrpc = callPackage ../development/python-modules/python-lsp-jsonrpc { };
+
   python-ldap-test = callPackage ../development/python-modules/python-ldap-test { };
 
   python-Levenshtein = callPackage ../development/python-modules/python-levenshtein { };
