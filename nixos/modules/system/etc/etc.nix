@@ -15,8 +15,6 @@ let
     # This is needed for the systemd module
     passthru.targets = map (x: x.target) etc';
   } /* sh */ ''
-    source $stdenv/setup
-
     set -euo pipefail
 
     makeEtcEntry() {
