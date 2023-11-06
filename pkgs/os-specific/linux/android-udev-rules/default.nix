@@ -6,7 +6,7 @@
 
 stdenv.mkDerivation rec {
   pname = "android-udev-rules";
-  version = "20231030";
+  version = "20231104";
 
   src = fetchFromGitHub {
     owner = "M0Rf30";
