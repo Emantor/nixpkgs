@@ -1248,6 +1248,8 @@
   ./services/networking/knot.nix
   ./services/networking/kresd.nix
   ./services/networking/lambdabot.nix
+  ./services/networking/labgrid/coordinator.nix
+  ./services/networking/labgrid/exporter.nix
   ./services/networking/legit.nix
   ./services/networking/libreswan.nix
   ./services/networking/livekit-ingress.nix
