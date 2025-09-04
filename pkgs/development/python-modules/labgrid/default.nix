@@ -56,6 +56,14 @@ buildPythonPackage rec {
       url = "https://github.com/Emantor/labgrid/commit/f0b672afe1e8976c257f0adff9bf6e7ee9760d6f.patch";
       sha256 = "sha256-M7rg+W9SjWDdViWyWe3ERzbUowxzf09c4w1yG3jQGak=";
     })
+    (fetchpatch {
+      url = "https://github.com/labgrid-project/labgrid/commit/bc6de2e0ca3248d3bf2690d5ce3c0e32518840c6.patch";
+      sha256 = "sha256-bygWtmQXzl97MFED9Iz14ALdwcU33ivMEL/XryT78bo=";
+    })
+    (fetchpatch {
+      url = "https://github.com/labgrid-project/labgrid/commit/18646f748892988f63ea4d95be32c669c68c2d2b.patch";
+      sha256 = "sha256-cZq1nufGgG9PDw+slc5+GqHcUZLFyWoTPkjRzHDp2K0=";
+    })
   ];
 
   build-system = [
