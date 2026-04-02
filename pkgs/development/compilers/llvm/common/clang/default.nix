@@ -20,6 +20,8 @@
   replaceVars,
   getVersionFile,
   fetchpatch,
+  grpc,
+  protobuf,
   # for tests
   libclang,
 }:
@@ -80,6 +82,9 @@ stdenv.mkDerivation (
       python3
       ninja
     ]
+    ++ lib.optionals enableClangToolsExtra [
+      protobuf
+    ]
     ++ lib.optionals enableManpages [
       python3.pkgs.myst-parser
       python3.pkgs.sphinx
@@ -89,6 +94,9 @@ stdenv.mkDerivation (
     buildInputs = [
       libxml2
       libllvm
+    ]
+    ++ lib.optionals enableClangToolsExtra [
+      grpc
     ];
 
     cmakeFlags = [
@@ -112,6 +120,9 @@ stdenv.mkDerivation (
       (lib.cmakeBool "SPHINX_OUTPUT_MAN" true)
       (lib.cmakeBool "SPHINX_OUTPUT_HTML" false)
       (lib.cmakeBool "SPHINX_WARNINGS_AS_ERRORS" false)
+    ]
+    ++ lib.optionals enableClangToolsExtra [
+      (lib.cmakeBool "CLANGD_ENABLE_REMOTE" true)
     ]
     ++ lib.optionals (lib.versionOlder release_version "20") [
       # clang-pseudo removed in LLVM20: https://github.com/llvm/llvm-project/commit/ed8f78827895050442f544edef2933a60d4a7935
